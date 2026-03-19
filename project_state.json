@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 10,
+  "summary": "An ICP/DFINITY-ready React + Motoko project that still includes the “Privacy Matters” landing page and Internet Identity/actor scaffolding, but has expanded into a fuller build template/monorepo-style setup (pnpm workspace + deploy/build scripts) and added a shadcn/ui-based component library scaffold plus additional frontend utilities/hooks for future app features.",
+  "existing_features": [
+    {
+      "id": "IF-1",
+      "title": "Static Privacy Matters landing page",
+      "synonyms": [
+        "Landing page UI",
+        "Marketing page"
+      ],
+      "description": "Renders a full-screen landing page with a header (shield icon + brand text), centered hero message (“Privacy Matters” + tagline), and a footer attribution line.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-2",
+      "title": "Header social links with icons",
+      "synonyms": [
+        "Social icons",
+        "External links"
+      ],
+      "description": "Displays clickable social links in the header using react-icons (X/Twitter and GitHub) with hover color transitions and accessible aria-labels.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-3",
+      "title": "TailwindCSS theming with OKLCH CSS variables",
+      "synonyms": [
+        "Design system tokens",
+        "CSS-variable theme"
+      ],
+      "description": "Defines a tokenized color system (background/foreground, primary/secondary, muted, borders, etc.) using OKLCH CSS variables applied via Tailwind, plus container sizing and radius tokens.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-4",
+      "title": "Simple fade-in animation utility",
+      "synonyms": [
+        "Hero animation",
+        "Entrance animation"
+      ],
+      "description": "Provides a custom fade-in keyframe animation (opacity + translateY) exposed via an .animate-fade-in utility class and applied to the landing hero content.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-5",
+      "title": "Internet Identity authentication context",
+      "synonyms": [
+        "II login",
+        "AuthClient provider"
+      ],
+      "description": "Implements Internet Identity login/logout and identity persistence via @dfinity/auth-client, exposing identity, login, clear, and status flags through a React Context and the useInternetIdentity hook.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-6",
+      "title": "Delegation validity checks and long-lived session configuration",
+      "synonyms": [
+        "DelegationIdentity validation",
+        "TTL configuration"
+      ],
+      "description": "Avoids re-login when a non-anonymous, valid DelegationIdentity is already present; login uses a maxTimeToLive of 30 days (in nanoseconds) and supports derivationOrigin via loaded config.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-7",
+      "title": "Backend actor creation hook with identity-aware caching",
+      "synonyms": [
+        "ICP actor hook",
+        "Authenticated actor"
+      ],
+      "description": "Creates an anonymous or authenticated backend actor depending on whether an identity is available, caches it via React Query keyed by principal, and invalidates/refetches non-actor queries when the actor changes.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-8",
+      "title": "Optional backend access-control initialization support",
+      "synonyms": [
+        "initializeAccessControl",
+        "Admin token initialization"
+      ],
+      "description": "After creating the actor, conditionally calls initializeAccessControl() if present; otherwise supports a private _initializeAccessControlWithSecret(secret) method using a secret token pulled from the URL hash/session.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-9",
+      "title": "Secure URL hash secret handling utilities",
+      "synonyms": [
+        "Admin token extraction",
+        "URL parameter persistence"
+      ],
+      "description": "Provides helpers to read parameters from query/hash, persist them in sessionStorage, and specifically handle sensitive secrets from hash fragments with automatic URL cleanup to reduce history/referrer leakage.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-10",
+      "title": "React Query client setup",
+      "synonyms": [
+        "TanStack Query provider",
+        "QueryClientProvider"
+      ],
+      "description": "Initializes a QueryClient and wraps the application with QueryClientProvider to support cached async state (used by the actor hook).",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-11",
+      "title": "Placeholder query hook module",
+      "synonyms": [
+        "useQueries placeholder"
+      ],
+      "description": "Includes an intentionally empty useQueries module indicating the current landing page does not require backend queries.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-12",
+      "title": "shadcn/ui component library scaffold",
+      "synonyms": [
+        "UI component kit",
+        "Radix + Tailwind components"
+      ],
+      "description": "Adds a large set of prebuilt UI components (shadcn/ui-style) under src/components/ui (e.g., dialog, dropdown-menu, form, sidebar, toast/sonner, carousel, etc.) along with supporting utilities for consistent UI building.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-13",
+      "title": "Editor state hook scaffold",
+      "synonyms": [
+        "useEditor",
+        "editor utilities"
+      ],
+      "description": "Introduces a dedicated useEditor hook module to support richer interactive/editor-like UI state management in the frontend.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-14",
+      "title": "Storage client utility module",
+      "synonyms": [
+        "StorageClient",
+        "storage abstraction"
+      ],
+      "description": "Adds a StorageClient utility to centralize access to browser storage (e.g., localStorage/sessionStorage) for consistent persistence behavior across the app.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "IF-15",
+      "title": "ICP build-template scaffolding (deploy/build scripts + configs)",
+      "synonyms": [
+        "build template",
+        "pnpm workspace",
+        "icp.yaml/deploy.sh"
+      ],
+      "description": "Adds a build-template directory with workspace/package configs and scripts (including image prune/resize helpers) and ICP canister YAMLs to support repeatable project builds and deployments.",
+      "reqIds": [],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-frontend-theme-styling-so-the-application-background-renders-as-red-i-e-the-tailwind-bg-background-color-used-by-the-landing-page-apply-the-change-consistently-for-both-light-and-dark-mode-so-the-background-remains-red-regardless-of-mode",
+      "title": "Update the frontend theme styling so the application background renders as red (i.e., the Tailwind `bg-background` color used by the landing page). Apply the change consistently for both light and dark mode so the background remains red regardless of mode.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-foreground-text-remains-readable-against-the-new-red-background-by-adjusting-theme-foreground-variables-classes-as-needed-while-keeping-the-background-red",
+      "title": "Ensure foreground text remains readable against the new red background by adjusting theme foreground variables/classes as needed while keeping the background red.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Allow configuring the landing page background color (latest request: set to red).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "architecturalNotes": [
+    "React SPA entrypoint wraps the app in @tanstack/react-query’s QueryClientProvider and a custom InternetIdentityProvider context.",
+    "Authentication is implemented as a React Context + hook pair (InternetIdentityProvider/useInternetIdentity) using @dfinity/auth-client and DelegationIdentity validity checks.",
+    "Backend access is abstracted behind a “create actor” hook (useActor) that uses React Query caching keyed by principal, and supports optional access-control initialization methods if present on the actor.",
+    "URL parameter utilities include secure handling for sensitive parameters via hash-fragment extraction with automatic URL cleanup and sessionStorage persistence.",
+    "TailwindCSS theme is driven by CSS variables using OKLCH color values; dark mode is class-based and currently mirrors the light palette for consistent appearance.",
+    "Frontend currently follows a ‘static landing page’ approach (explicitly no query hooks used on the landing page), while keeping ICP integration scaffolding in place for future features.",
+    "Project now includes a build-template scaffold (Dockerfile, deploy scripts, icp.yaml, pnpm workspace config) intended for repeatable ICP project builds/deploys.",
+    "Frontend now includes a shadcn/ui-style component library (many UI primitives in src/components/ui) supported by shared utils and hooks (e.g., use-mobile).",
+    "A StorageClient utility module has been introduced to centralize browser storage access patterns.",
+    "An additional useEditor hook module has been added as scaffolding for richer interactive/editor features."
+  ],
+  "knownIssues": [
+    "The Motoko backend (backend/main.mo) is an empty actor; any frontend actor calls beyond initialization will fail once invoked unless a real canister interface is implemented/deployed.",
+    "useActor calls _initializeAccessControlWithSecret with an empty string when no caffeineAdminToken is present; depending on backend implementation this could cause unnecessary failed calls or unintended behavior.",
+    "InternetIdentityProvider sets loginStatus to 'idle' after initialization even when an identity is loaded; consumers must rely on the presence of identity rather than status to detect authenticated state.",
+    "urlParams utilities rely on window/sessionStorage and will not work in SSR/non-browser environments without guards (acceptable for this SPA).",
+    "Landing page external links point to generic https://twitter.com and https://github.com rather than project-specific accounts.",
+    "Large shadcn/ui component scaffold may include many currently-unused components, potentially increasing repository size and maintenance overhead until actively leveraged.",
+    "Intermittent build/deployment failure occurred during a background color change deployment (deployment error reported after attempting to set background to black)."
+  ],
+  "isFixRequest": false,
+  "gameProjectType": "none",
+  "projectName": "Privacy Matters Landing Page",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0,
+  "requiresBackendChanges": false,
+  "requiresFrontendChanges": true
+}

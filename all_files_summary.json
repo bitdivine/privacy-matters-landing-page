@@ -1,0 +1,16 @@
+{
+  "backend/main.mo": "Defines an empty Motoko actor with no methods or state.",
+  "feature_evidence.json": "Documents evidence for frontend theme features ensuring a red background and readable foreground text across light and dark modes, referencing index.css.",
+  "frontend-file-summaries.txt": "Provides brief human-written summaries of key frontend source files and their roles in the application.",
+  "frontend/index.html": "HTML entry point that sets up the root div and loads the React application module.",
+  "frontend/src/App.tsx": "Root React component that renders the LandingPage component.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages a backend actor based on Internet Identity authentication and initializes access control.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements Internet Identity authentication context and provider, handling login, logout, and identity state management.",
+  "frontend/src/hooks/useQueries.ts": "Intentionally empty placeholder indicating no backend queries are required.",
+  "frontend/src/index.css": "Global Tailwind CSS styles defining a consistent red background theme with high-contrast foreground colors for light and dark modes.",
+  "frontend/src/main.tsx": "Application bootstrap that renders the React app with React Query and Internet Identity providers.",
+  "frontend/src/pages/LandingPage.tsx": "Static landing page layout with header, hero text, social links, and footer, styled using the global theme.",
+  "frontend/src/utils/urlParams.ts": "Utility functions for reading, persisting, and clearing URL and session-based parameters, including hash-based routing support.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration enabling class-based dark mode, scanning frontend source files, and extending the theme with OKLCH CSS-variable color tokens, radius/shadow tokens, container settings, and accordion animations. Registers typography, container-queries, and animation plugins.",
+  "project_state.json": "Machine-readable snapshot of the project’s current state and features, including schema/versioning, a high-level project summary, and a detailed list of implemented features spanning the landing page, Tailwind theming, animations, and Internet Identity/ICP actor scaffolding."
+}

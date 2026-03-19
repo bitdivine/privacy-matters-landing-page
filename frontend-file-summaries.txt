@@ -1,0 +1,6 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the landing page.",
+  "frontend/src/pages/LandingPage.tsx": "Complete landing page component with header, centered \"Privacy Matters\" hero text, and footer with attribution.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring red background (lightness 0.55, chroma 0.22, hue 25) with high-contrast white text (lightness 0.98) for accessibility in both light and dark modes, maintaining the fade-in animation utility.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as no backend queries are needed for this static landing page."
+}

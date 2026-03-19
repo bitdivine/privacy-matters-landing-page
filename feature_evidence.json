@@ -1,0 +1,41 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-frontend-theme-styling-so-the-application-background-renders-as-red-i-e-the-tailwind-bg-background-color-used-by-the-landing-page-apply-the-change-consistently-for-both-light-and-dark-mode-so-the-background-remains-red-regardless-of-mode",
+      "featureTitle": "Update the frontend theme styling so the application background renders as red (i.e., the Tailwind `bg-background` color used by the landing page). Apply the change consistently for both light and dark mode so the background remains red regardless of mode.",
+      "files": [
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-foreground-text-remains-readable-against-the-new-red-background-by-adjusting-theme-foreground-variables-classes-as-needed-while-keeping-the-background-red",
+      "featureTitle": "Ensure foreground text remains readable against the new red background by adjusting theme foreground variables/classes as needed while keeping the background red.",
+      "files": [
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Set landing page theme background to red with readable foreground",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Update theme background token so bg-background renders as red in both light and dark mode.",
+      "acceptanceCriteria": [
+        "On the landing page, the full-page background is red (covers the entire viewport).",
+        "Switching between light and dark mode does not change the background away from red."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update the CSS variable backing Tailwind `bg-background` (the `--background` token) to a red OKLCH value in both `:root` and `.dark` so the background remains red regardless of mode."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Adjust theme foreground/muted variables to keep landing page text readable on the red background.",
+      "acceptanceCriteria": [
+        "Hero title, subtitle, header links, and footer text have sufficient contrast and are comfortably readable on the red background."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Adjust theme tokens used by `text-foreground`, `text-muted-foreground`, and related contrast-affecting variables (e.g., border/ring if needed) so header, hero, and footer text remains readable against the red `--background` while keeping the background red in both modes."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "build_request",
+  "title": "Change landing page background color to red",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the frontend theme styling so the application background renders as red (i.e., the Tailwind `bg-background` color used by the landing page). Apply the change consistently for both light and dark mode so the background remains red regardless of mode.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "change the background colour to red"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On the landing page, the full-page background is red (covers the entire viewport).",
+        "Switching between light and dark mode does not change the background away from red."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Ensure foreground text remains readable against the new red background by adjusting theme foreground variables/classes as needed while keeping the background red.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "change the background colour to red"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero title, subtitle, header links, and footer text have sufficient contrast and are comfortably readable on the red background."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/immutablePaths (e.g., frontend/src/main.tsx, frontend/src/hooks/useActor.ts, frontend/src/hooks/useInternetIdentity.ts, frontend/src/components/ui).",
+    "Keep the backend as-is (no backend changes required for a background color update)."
+  ],
+  "nonGoals": [
+    "Do not redesign the landing page layout or change copy/content beyond any minimal readability adjustments required by the red background.",
+    "Do not add new pages, routes, or backend methods."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
