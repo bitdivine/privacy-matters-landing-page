@@ -38,7 +38,7 @@ export function LandingPage() {
             <main className="flex-1 flex items-center justify-center px-6 py-12">
                 <div className="text-center space-y-8 animate-fade-in">
                     <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight">
-                        Privacy Matters, 2026 edition
+                        Privacy Matters
                     </h1>
                     <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
                         Your data, your rights, your choice.
